@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SmartElectro Hub – Premium Electronics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Noto+Sans:wght@300;400;500&family=Orbitron:wght@700;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a class="logo" href="#" onclick="showPage('home')">
+            <div class="logo-icon">⚡</div>
+            Smart<span>Electro</span>&nbsp;Hub
+        </a>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+            <li><a href="#" onclick="showPage('products')" id="nav-products">Products</a></li>
+            <li><a href="#" onclick="showPage('about')" id="nav-about">About</a></li>
+            <li><a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+        </ul>
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- ===== HOME PAGE ===== -->
+    <div class="page active" id="page-home">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-grid"></div>
+            <div class="floating-badge badge1">🔥 Diwali Sale 40% OFF</div>
+            <div class="floating-badge badge2">✅ Genuine Products</div>
+            <div class="floating-badge badge3">🚀 Fast Delivery</div>
+            <div class="hero-content">
+                <div class="hero-badge">⚡ New Stock Arrived 2025</div>
+                    <h1>Latest Electronics<br>At Best Prices</h1>
+                    <p>Premium mobiles, laptops, headphones aur accessories — sab kuch ek jagah. Ab ghar baithe order karo, WhatsApp pe directly shop se baat karo!</p>
+                <div class="hero-btns">
+                    <button class="btn btn-primary" onclick="showPage('products')">🛒 View Products</button>
+                    <button class="btn btn-whatsapp" onclick="openWhatsApp('Hello! I want to know about your products.')">💬 WhatsApp Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="section" style="background:var(--bg2)">
+            <div class="section-header">
+            <h2>Featured <span>Products</span></h2>
+            <p>Hamari top selling items — best quality, best price</p>
+            <div class="section-line"></div>
+            </div>
+            <div class="products-grid" id="featuredGrid"></div>
+            <div style="text-align:center;margin-top:2.5rem;">
+                <button class="btn btn-outline" onclick="showPage('products')">View All Products →</button>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Choose <span>Us?</span></h2>
+                <p>Hamare saath shopping kyun karein — jaaniye</p>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🚀</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Same-day ya next-day delivery available hai Bareilly mein. Order karo aur jaldi pao!</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">✅</div>
+                    <h3>100% Genuine Products</h3>
+                    <p>Sirf authentic aur original products milte hain. Koi duplicate nahi, guarantee ke saath!</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>Market se sasta milega yahan. Agar kahin sasta mile toh hum price match karenge!</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">🔧</div>
+                    <h3>After-Sale Support</h3>
+                    <p>Purchase ke baad bhi hum support dete hain. Koi problem ho toh seedha WhatsApp karo.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">💬</div>
+                    <h3>WhatsApp Order</h3>
+                    <p>Seedha WhatsApp pe message karo, baat karo aur order confirm karo — bilkul simple!</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">🛡️</div>
+                    <h3>Secure & Trusted</h3>
+                    <p>1000+ satisfied customers. Reviews aur trust ke saath shopping karein hamare saath.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner CTA -->
+        <section style="background:linear-gradient(135deg,rgba(0,229,255,.08),rgba(255,107,53,.08));border-top:1px solid var(--border);     border-bottom:1px solid var(--border);padding:4rem 2rem;text-align:center;">
+            <h2 style="font-family:'Orbitron',monospace;font-size:clamp(1.3rem,4vw,2rem);font-weight:700;color:var(--text);margin-bottom:1rem;">Ready to Order? <span style="color:var(--accent)">Contact Us Now!</span></h2>
+            <p style="color:var(--muted);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;">WhatsApp pe message karo ya contact form fill karo. Hum jaldi reply denge!</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                <button class="btn btn-whatsapp" onclick="openWhatsApp('Hello! I am interested in buying electronics.')">💬 Chat on WhatsApp</button>
+                <button class="btn btn-outline" onclick="showPage('contact')">📞 Contact Form</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===== PRODUCTS PAGE ===== -->
+    <div class="page" id="page-products">
+        <div class="page-hero">
+            <h1>🛒 All Products</h1>
+            <p>Sare products ek jagah — choose karo, WhatsApp karo, order karo!</p>
+        </div>
+        <div class="filter-bar" id="filterBar"></div>
+        <div class="section" style="padding-top:1rem;">
+            <div class="products-grid" id="allProductsGrid"></div>
+        </div>
+    </div>
+
+    <!-- ===== PRODUCT DETAIL PAGE ===== -->
+    <div class="page" id="page-detail">
+        <div style="max-width:1100px;margin:0 auto;padding:2rem 2rem 0;">
+            <button class="back-btn" onclick="goBack()">← Back to Products</button>
+        </div>
+        <div class="detail-wrapper" id="detailContent"></div>
+    </div>  
+
+    <!-- ===== ABOUT PAGE ===== -->
+    <div class="page" id="page-about">
+        <div class="page-hero">
+            <h1>ℹ️ About Us</h1>
+            <p>SmartElectro Hub ke baare mein jaaniye</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-img">🏪<br><small style="font-family:'Rajdhani',sans-serif;color:var(--muted);font-size:1rem;">Est. 2015</small></div>
+            <div class="about-text">
+                <h2>SmartElectro Hub</h2>
+                <p>SmartElectro Hub ek trusted local electronics shop hai Bareilly mein. Hum 2015 se customers ko best quality electronics provide kar rahe hain — mobiles, laptops, headphones, accessories aur bahut kuch.</p>
+                <p>Hamara mission hai ki har customer ko genuine product milе, sahi price mein aur sahi service ke saath. Isliye hum WhatsApp pe available hain taaki aap seedha baat karke order kar sako.</p>
+                <p>Hamare experienced staff members aapko sahi product choose karne mein help karte hain. Chahe budget phone chahiye ya premium laptop — hum sab ke liye solutions rakhte hain.</p>
+                <ul class="values-list">
+                    <li>10+ saal ka experience electronics industry mein</li>
+                    <li>Sirf 100% genuine aur warranty products</li>
+                    <li>Customer satisfaction hamari priority hai</li>
+                    <li>Same-day delivery in Bareilly available</li>
+                    <li>After-sale support aur repair service</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div style="max-width:900px;margin:0 auto;padding:0 2rem 3rem;">
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="stat-num">5000+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>    
+
+                <div class="stat-box">
+                    <div class="stat-num">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">500+</div>
+                    <div class="stat-label">Products Available</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center;padding:0 2rem 4rem;">
+            <p style="color:var(--muted);margin-bottom:1.5rem;">Hamare saath connected rehne ke liye ya enquiry ke liye:</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                <button class="btn btn-whatsapp" onclick="openWhatsApp('Hello! I want to know more about SmartElectro Hub.')">💬 WhatsApp Karo</button>
+                <button class="btn btn-outline" onclick="showPage('contact')">📞 Contact Us</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CONTACT PAGE ===== -->
+    <div class="page" id="page-contact">
+        <div class="page-hero">
+            <h1>📞 Contact Us</h1>
+            <p>Humse baat karo — order, enquiry, ya kuch bhi!</p>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Hamare Baare Mein</h2>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Address</h4>
+                        <p>SmartElectro Hub, Main Market,<br>Moradabad, Uttar Pradesh – 244001</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h4>Phone / WhatsApp</h4>
+                        <p>+91 98765 43210</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@smartelectrohub.in</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div>
+                        <h4>Shop Timings</h4>
+                        <p>Mon–Sat: 10:00 AM – 8:00 PM<br>Sunday: 11:00 AM – 6:00 PM</p>
+                    </div>
+                </div>
+                <button class="btn btn-whatsapp" style="width:100%;justify-content:center;margin-top:1rem;" onclick="openWhatsApp('Hello! I want to make an enquiry.')">
+                    💬 Direct WhatsApp Chat
+               </button>
+                <div class="social-row">
+                    <a class="social-btn" href="#">📘 Facebook</a>
+                    <a class="social-btn" href="#">📸 Instagram</a>
+                    <a class="social-btn" href="#">▶️ YouTube</a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>📩 Send Message</h2>
+                <div class="form-group">
+                    <label>Aapka Naam</label>
+                    <input type="text" id="cName" placeholder="Full name likhein..."/>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="cPhone" placeholder="+91 XXXXX XXXXX"/>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <select id="cSubject">
+                        <option value="">Select...</option>
+                        <option>Product Enquiry</option>
+                        <option>Order karna hai</option>
+                        <option>Price check</option>
+                        <option>After-sale support</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="cMsg" placeholder="Aapka message yahan likhein..."></textarea>
+                </div>
+                <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="sendMessage()">
+                    📤 Send Message
+                </button>
+                <div class="success-msg" id="successMsg">
+                    ✅ Message send ho gaya! Hum jald hi aapse contact karenge.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="logo" href="#" onclick="showPage('home')">
+                    <div class="logo-icon">⚡</div>
+                    Smart<span>Electro</span>&nbsp;Hub
+                </a>
+                <p>Bareilly ki most trusted electronics shop. Genuine products, best prices, aur WhatsApp support ke saath.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a onclick="showPage('products')">Products</a></li>
+                    <li><a onclick="showPage('about')">About Us</a></li>
+                    <li><a onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a onclick="showPage('products')">📱 Mobiles</a></li>
+                    <li><a onclick="showPage('products')">💻 Laptops</a></li>
+                    <li><a onclick="showPage('products')">🎧 Headphones</a></li>
+                    <li><a onclick="showPage('products')">⌚ Smartwatches</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a>📍 Bareilly, UP</a></li>
+                    <li><a>📱 +91 98765 43210</a></li>
+                    <li><a>📧 info@smartelectrohub.in</a></li>
+                    <li><a onclick="openWhatsApp('')">💬 WhatsApp</a></li>
+                </ul>
+            </div>  
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 SmartElectro Hub. All rights reserved.</p>
+            <p style="color:var(--accent)">Made with ⚡ in Bareilly</p>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">✅ <span id="toastMsg"></span></div>
+    <!-- Scroll Top -->
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <!-- ⚠️ ORDER MATTER KARTA HAI — change mat karna! -->
+    <script src="js/data.js"></script>    <!-- 1st — data & variables -->
+    <script src="js/router.js"></script>  <!-- 2nd — navigation (products use karta hai) -->
+    <script src="js/main.js"></script>    <!-- 3rd — render & events -->
+</body>
+</html>
+
+
+
